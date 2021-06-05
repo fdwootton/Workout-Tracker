@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose= require('mongoose');
 
 const apiRoutes = require('./routes/apiRoutes');
 const homeRoutes = require('./routes/homeRoutes');
@@ -12,8 +13,16 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
+//mongoose db connect
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+});
+
 //routes
 app.use(apiRoutes);
-app.use(homeRoutes)
+app.use(homeRoutes);
 
-app.listen(PORT, () => console.log('App listening...'));
+//create server
+app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
