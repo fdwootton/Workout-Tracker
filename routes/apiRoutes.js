@@ -36,13 +36,13 @@ router.post("/api/workouts", function({ body }, res) {
 });
 
 // GET request for workouts in range
-router.get("/api/workouts/range", (req, res) => {
+router.get("/api/workouts/range", function(req, res) {
 	workoutDB.find()
-		.then((dbData) => {
-			res.json(dbData);
+		.then(function(data) {
+			res.json(data);
 		})
-		.catch((err) => {
-			res.json(err);
+		.catch(function(error) {
+			res.json(error);
 		});
 });
 
