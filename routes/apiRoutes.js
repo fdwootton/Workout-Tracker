@@ -37,8 +37,8 @@ router.post("/api/workouts", function( req
 });
 
 // GET request for workouts in range
-router.get("/api/workouts/range", function({query}, res) {
-	workoutDB.find({ day: { $gte: query.start, $lte: query.end } })
+router.get("/api/workouts/range", function( req, res) {
+	workoutDB.find({})
 		.then(function(data) {
 			res.json(data);
 		})
