@@ -5,7 +5,7 @@
   
   Click here to visit the deployed application on Heroku: [**Workout-Tracker**](https://secure-island-57696.herokuapp.com/)
 
-  ![](./fitness-tracker-screenshot.png)
+  ![Workout-Tracker](./public/fitness-tracker-screenshot.png)
 
   ## **License**
   ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br/>
